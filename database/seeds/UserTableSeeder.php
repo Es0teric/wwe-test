@@ -17,7 +17,8 @@ class UserTableSeeder extends Seeder
         	'password' => 'leo123',
         	'first_name' => 'Leo',
         	'last_name' => 'F',
-        	'username' => 'Es0teric'
+        	'username' => 'Es0teric',
+        	'last_login' => date('Y-m-d h:i:s')
         ]);
 
     }

@@ -14,9 +14,11 @@ class CreateUsernameInUserTable extends Migration
     public function up()
     {
         if( Schema::hasTable('Users') ) {
+
             Schema::table('users', function(Blueprint $t) {
                 $t->string('username', 100);
             });
+        
         }
     }
 
@@ -28,7 +30,11 @@ class CreateUsernameInUserTable extends Migration
     public function down()
     {
         if( Schema::hasColumn( 'users', 'username' ) ) {
-            Schema::dropColumn( 'username' );
+        
+        	Schema::table('users', function(Blueprint $t) {
+            $t->dropColumn( 'username' );
+          });  
+        
         }
     }
 }
