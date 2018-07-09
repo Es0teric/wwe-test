@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/login', function() {
+	
+});
+
+Route::get('/video/upload', ['uses' => 'VideoController@store']);
