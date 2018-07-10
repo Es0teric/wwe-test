@@ -27,10 +27,14 @@ class VideosController extends Controller
     		Storage::putFileAs('/public/uploads' . $this->getUserDir() . '/' . $this->getType( $request->file('video')->getClientOriginalExtension() ), $request->file('video'), $request->input('filename'), $request->file('video')->getClientOriginalExtension() );
     		//Storage::disk('public')->put( $request->file( 'video' ), $request->file('video')->getClientOriginalName() );
 
-	    	/*Videos::create([
+	    	Videos::create([
 	    		'user_id' => $user_id,
-	    		'file_size' => 
-	    	]);*/
+	    		'file_size' => $request->file('video')->getClientSize(),
+                'filename' => $request->input('filename'),
+                'vid_format' => $request->file('video')->getClientOriginalExtension(),
+                //'duration' => 
+                //'location' => $request->input('location')
+	    	]);
 
 	    } else {
 
