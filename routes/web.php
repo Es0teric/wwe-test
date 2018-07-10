@@ -19,4 +19,4 @@ Route::get('/login', function() {
 	
 });
 
-Route::get('/video/upload', ['uses' => 'VideoController@store']);
+Route::post('/video/upload', ['uses' => 'VideosController@store']);

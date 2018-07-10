@@ -19,6 +19,7 @@ class CreateVideosTable extends Migration
            $t->foreign('user_id')->references('id')->on('users');
            //$t->unsignedInteger('tag_id');
            //$t->foreign('tag_id')->references('id')->on('users');
+           $t->string('filename', 255);
            $t->string('file_size', 255);
            $t->string('vid_format', 100);
            $t->string('duration', 100);
